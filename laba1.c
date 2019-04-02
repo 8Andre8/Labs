@@ -1,4 +1,4 @@
-//**************The program that implements the basic functionality of the shell****************
+//**************The program that implements the basic functionality of the shell******************
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -6,13 +6,13 @@
 #include <sys/wait.h>
 #include <string.h>
 
-//**********************************************************************************************
+//************************************************************************************************
 #define ROW 16
 #define SY 80
 void exe(char *arpointer[]);                                // Procedure of execution
 void parc(char arsymb[ROW][SY], int *word, int *cycle);     // Procedure of reading a string
                                 
-//**************Main program********************************************************************
+//**************Main program**********************************************************************
 int main() {
 int cycle = 1;                                              // End of input flag
 int word = 0;                                               // Number of words
@@ -33,7 +33,7 @@ char arsymb[ROW][SY];                                       // Array of symbols
     return 0;
            }
 
-//**************Read and Parc*******************************************************************
+//**************Read and Parc*********************************************************************
 void parc(char arsymb[ROW][SY], int *word, int *cycle) {
     char c;
     int i = 0, j = 0, IN = 0;                               // Number of words; symbol number; in/out a word
@@ -49,9 +49,10 @@ void parc(char arsymb[ROW][SY], int *word, int *cycle) {
             return;
                                       }
         if (c == '\n') {                                    // Enter in the end of input
+                if (j == 0) {                               // For spaces after enter
+                    i--;
+                            }
             *word = i;
-            arsymb[i][j] = '\0';
-            arsymb[i][++j] = '\0';
             return;
                        }
         
@@ -67,7 +68,7 @@ void parc(char arsymb[ROW][SY], int *word, int *cycle) {
 	    *word = -1;   
                               }
 
-//**************Execution***********************************************************************
+//**************Execution*************************************************************************
 void exe(char *arpointer[]) {
     pid_t child_pid = fork(); 
     if (!child_pid) {                                       // Child branch
