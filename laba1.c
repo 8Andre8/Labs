@@ -66,7 +66,7 @@ void parc(char arsymb[ROW][SY], int *word, int *cycle) {
     *word = i;
 	if ((i == 0)&(j == 0))                              // Empty input
 	    *word = -1;   
-                              }
+                                                       }
 
 //**************Execution*************************************************************************
 void exe(char *arpointer[]) {
