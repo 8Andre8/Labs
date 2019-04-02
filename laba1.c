@@ -64,7 +64,7 @@ void parc(char arsymb[ROW][SY], int *word, int *cycle) {
                                    }  
     *cycle = 0;                                             // End of input
     *word = i;
-	if ((i == 0)&(j == 0))                                  // Empty input
+	if ((i == 0)&(j == 0))                              // Empty input
 	    *word = -1;   
                               }
 
