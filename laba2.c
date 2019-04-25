@@ -1,4 +1,4 @@
-
+// Perfomed by Andreev Maxim
 //***********The program that implements the basic functionality of the shell and redirection of input/output***************
 #include <stdio.h>
 #include <stdlib.h>
